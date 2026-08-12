@@ -32,6 +32,7 @@ import mimetypes
 EMPTY_API_KEY="Your API KEY Here"
 MINIMAX_MODELS = {
     "minimax-m3": "MiniMax-M3",
+    "minimax-m2.7": "MiniMax-M2.7",
 }
 
 def load_openai_api_key():

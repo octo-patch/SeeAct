@@ -25,6 +25,16 @@ class InferenceEngineTests(unittest.TestCase):
         self.assertEqual(engine.api_base, "https://api.minimaxi.com/v1")
         self.assertEqual(engine.api_key, "test-key")
 
+    def test_minimax_m27_is_registered(self):
+        engine = engine_factory(
+            api_key="test-key",
+            model="MiniMax-M2.7",
+            protocol="openai",
+            api_base="https://api.minimax.io/v1",
+        )
+
+        self.assertEqual(engine.model, "openai/MiniMax-M2.7")
+
     def test_minimax_openai_generation_sends_screenshot_content(self):
         with tempfile.NamedTemporaryFile(suffix=".jpg") as image_file:
             image_file.write(b"jpeg data")
